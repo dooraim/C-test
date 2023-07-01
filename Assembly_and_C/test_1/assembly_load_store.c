@@ -9,7 +9,7 @@ int main(void)
 
 
     // clean register
-    __asm (
+    __asm volatile (
         "mov X0, #0\n\t"
         "mov X1, #0\n\t"
         "mov X2, #0\n\t"
@@ -22,14 +22,14 @@ int main(void)
     );
 
 
-    __asm (
+    __asm volatile (
         // load address of a into X0 register
         "ldr X0, =a\n\t"
         // load content of X0 register, into X1
         "ldr X1, [X0]\n\t"
     );
 
-    __asm (
+    __asm volatile (
         // load address of b into X2 register
         "ldr X2, =b\n\t"
         // store content of a (X1 register), into X2
@@ -42,7 +42,7 @@ int main(void)
     // Suppose we want to load an array of five integers into
     // registers rl, r2, r3, r4, and rs.
 
-      __asm (
+      __asm volatile (
         "ldr X3, =array\n\t"
         "ldr X4, [X3]\n\t"
         "add X4, X4, #1\n\t"
