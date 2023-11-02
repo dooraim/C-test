@@ -53,3 +53,9 @@ dkms.conf
 
 # Not include backup
 README.md.backup
+
+# Ignora tutti i file di test
+*test*
+
+# Ignora tutti i file .txt
+*.txt
